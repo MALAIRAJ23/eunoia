@@ -15,21 +15,9 @@ body {
     padding: 20px;
   }
   
-  /* Logo Styling */
-  .login-header {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-  
-  .login-logo {
-    width: 100px;
-    height: auto;
-  }
-  
   /* Form Styling */
   .login-form {
-    background: rgba(255, 255, 255, 0.9);
+    background: #92759c;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
