@@ -1,0 +1,111 @@
+.MainPage {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f6f7ec;
+  text-align: center;
+}
+
+.Home {
+  color: #512260;
+  font-family: 'Frunchy sage';
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  align-items: center;
+  background-color: #f6f7ec;
+}
+
+.MainPage-Header {
+  background-color: #f6f7ec;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+}
+
+nav {
+  display: flex;
+  justify-content: left;
+  background-color: #f6f7ec;
+  padding: 15px 0;
+  box-shadow: 0 4px 6px rgb(217, 219, 208);
+}
+
+nav a {
+  color: #512260;
+  font-family: 'Frunchy sage';
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.Img {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+}
+
+.Img .App-logo1 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-grow: 1;
+  width: 250px;
+}
+
+.Img .App-logo2 {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-grow: 1;
+  margin-left: 20px;
+  width: 250px;
+}
+
+body {
+  background-color: #f6f7ec;
+}
+
+.About {
+  color: #512260;
+  font-family: 'Frunchy sage';
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.ftrdiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f7ec;
+  padding: 25px 10px;
+  box-shadow: 12px 12px 12px 12px rgb(217, 219, 208);
+}
+
+.ftr {
+  color: #512260;
+  font-family: 'Frunchy sage';
+}
+
+
+.ButtonContainer {
+  margin: 45px;
+}
+
+
+.ActionButton {
+  width: 150px; 
+  height: auto;
+  cursor: pointer;
+  border: none; 
+}
+
+.ActionButton:hover {
+  opacity: 0.8; /* Slightly reduce opacity on hover */
+}
