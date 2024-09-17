@@ -20,7 +20,6 @@
 .MainPage-Header {
   background-color: #f6f7ec;
   min-height: 20vh;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
@@ -36,7 +35,7 @@ nav {
 
 nav a {
   color: #512260;
-  font-family: 'Frunchy sage';
+  font-family: Frunchy sage;
   text-decoration: none;
   padding: 10px 20px;
   font-weight: 500;
@@ -48,23 +47,24 @@ nav a {
   justify-content: left;
   align-items: center;
   flex-direction: row;
+  width: 200x;
 }
 
-.Img .App-logo1 {
+.Img .App-logo1{
   display: flex;
   align-items: center;
   justify-content: left;
   flex-grow: 1;
-  width: 250px;
+  width: 150px;
 }
 
-.Img .App-logo2 {
+.Img .App-logo2{
   display: flex;
   align-items: center;
   justify-content: right;
   flex-grow: 1;
-  margin-left: 20px;
-  width: 250px;
+  margin-left: 20px; 
+  width: 150px;
 }
 
 body {
@@ -90,22 +90,5 @@ body {
 
 .ftr {
   color: #512260;
-  font-family: 'Frunchy sage';
-}
-
-
-.ButtonContainer {
-  margin: 45px;
-}
-
-
-.ActionButton {
-  width: 150px; 
-  height: auto;
-  cursor: pointer;
-  border: none; 
-}
-
-.ActionButton:hover {
-  opacity: 0.8; /* Slightly reduce opacity on hover */
+  font-family: Frunchy sage;
 }
