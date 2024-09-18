@@ -1,17 +1,21 @@
-import React from 'react'; 
-import logo1 from "./icon.jpg";
-import logo2 from "./title.jpg";
-import loginImage from "./getstarted.jpg"; 
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
-import Login from './login.js';
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import Login from './login';
+import Signup from './signup';
+import ForgotPassword from './forgotpassword';
+import ResetPassword from './resetpassword';
+import logo1 from './icon.jpg';
+import logo2 from './title.jpg';
+import loginImage from './getstarted.jpg';
+import './App.css';
 
 function MainApp() {
-  const location = useLocation(); // Hook to get the current route
-  const showHeaderAndFooter = location.pathname !== "/login"; // Conditionally show nav and footer
+  const location = useLocation();
+  const showHeaderAndFooter = location.pathname !== "/login" && location.pathname !== "/signup" && location.pathname !== "/forgotpassword" && location.pathname !== "/resetpassword";
 
   return (
     <div className="MainPage">
+      {/* Conditionally show navigation and footer */}
       {showHeaderAndFooter && (
         <>
           <nav className="Main">
@@ -50,19 +54,23 @@ function MainApp() {
         {/* Login Route */}
         <Route path="/login" element={<Login />} />
 
-        {/* About Route */}
+        {/* Signup Route */}
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Forgot Password Route */}
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+
+        {/* Reset Password Route */}
+        <Route path="/resetpassword" element={<ResetPassword />} />
+
+        {/* Additional Routes */}
         <Route path="/about" element={<div>About Page</div>} />
-
-        {/* Engage Route */}
         <Route path="/engage" element={<div>Engage Page</div>} />
-
-        {/* Elements Route */}
         <Route path="/elements" element={<div>Elements Page</div>} />
-
-        {/* More Route */}
         <Route path="/more" element={<div>More Page</div>} />
       </Routes>
 
+      {/* Conditionally show footer */}
       {showHeaderAndFooter && (
         <div className="ftrdiv">
           <footer className="ftr">
