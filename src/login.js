@@ -1,6 +1,6 @@
-import React from 'react';
-import './login.css'; 
-import { Link } from 'react-router-dom'; 
+import React from "react";
+import "./login.css";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -18,10 +18,19 @@ function Login() {
           </div>
           <button type="submit">Login</button>
         </form>
-        
+
         <div className="login-extra-options">
-          <Link to="/forgotpassword" className="forgot-password-link">Forgot Password?</Link>
-          <p>Don't have an account? <Link to="/signup" className="signup-link">Sign up now</Link></p> {/* Updated Link */}
+          <br></br>
+          <Link to="/forgotpassword" className="forgot-password-link">
+            Forgot Password?
+          </Link>
+          <p>
+            Don't have an account?{" "}
+            <Link to="/signup" className="signup-link">
+              Sign up now
+            </Link>
+          </p>{" "}
+          {/* Updated Link */}
         </div>
       </div>
     </div>
