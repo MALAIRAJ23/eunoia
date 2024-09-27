@@ -1,0 +1,53 @@
+h1 {
+    font-family: 'Frunchy Sage';
+    color: #512260;
+}
+
+.GreekRoot{
+    margin-left: 20px;
+    text-align: left;
+    font-family: 'Frunchy Sage';
+    color:#512260;
+}
+
+.Pronunciation{
+    margin-left: 20px;
+    text-align: left;
+    font-family: 'Frunchy Sage';
+}
+
+.Pronunciation h2{
+    font-family: 'Frunchy Sage';
+    color:#512260;
+    text-align: start;
+}
+
+.AudioWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.Meaning{
+    margin-left: 20px;
+    text-align: left;
+    font-family: 'Frunchy Sage';
+    color:#512260;
+}
+
+.Description p {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 10000px;
+    line-height: 1.5;
+    font-family: 'Frunchy Sage';
+    color:#512260;
+    font-size:xx-large;
+}
+
+.GreekRoot h2, .Pronunciation h2, .Meaning h2 {
+    margin-left: 10px;
+}
+

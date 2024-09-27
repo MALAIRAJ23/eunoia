@@ -22,6 +22,10 @@ function MainApp() {
     location.pathname !== "/login" &&
     location.pathname !== "/signup" &&
     location.pathname !== "/forgotpassword" &&
+    location.pathname !== "/about" &&
+    location.pathname !== "/engage" &&
+    location.pathname !== "/elements" &&
+    location.pathname !== "/more" &&
     location.pathname !== "/resetpassword";
 
   return (

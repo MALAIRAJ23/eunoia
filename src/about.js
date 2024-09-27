@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import "./about.css";
-import Audios from "./Eunoia Pronunciation.mp3"; // Imported audio file
-import { useNavigate } from "react-router-dom";
-import { FaVolumeUp } from "react-icons/fa"; // Importing a speaker icon from Font Awesome
+import Audios from "./Eunoia Pronunciation.mp3";
+import { FaVolumeUp } from "react-icons/fa";
 
 function About() {
   const a = "Eunoia <ευνοία>";
-  const b = "yoo-NOY-uh"
+  const b = "yoo-NOY-uh";
+  const c = "A Greek word that means beautiful thinking or a well mind."
   const audioRef = useRef(null);
 
   const playAudio = () => {
@@ -22,12 +22,17 @@ function About() {
         <h2>{a}</h2>
       </div>
       <div className="Pronunciation">
-        <FaVolumeUp onClick={playAudio} style={{ fontSize: '2rem', cursor: 'pointer' }} />
+        <div className="AudioWrapper">
+          <FaVolumeUp onClick={playAudio} style={{ fontSize: '2rem', cursor: 'pointer' }} />
+          <h2>{b}</h2>
+        </div>
         <audio ref={audioRef}>
           <source src={Audios} type="audio/mp3" />
           Your browser does not support the audio element.
         </audio>
-        <h2>{b}</h2>
+      </div>
+      <div className="Meaning">
+        <h2>{c}</h2>
       </div>
       <div className="Description">
         <p>
