@@ -1,13 +1,22 @@
 import React from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";  // Added useNavigate
 
 function Login() {
+  const navigate = useNavigate();
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    // Here, you can implement authentication logic (optional)
+    // If authentication is successful:
+    navigate('/elements'); // Redirect to the new  element page after loginS
+  };
+
   return (
     <div className="login-container">
       <div className="login-form">
         <h2>Login</h2>
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="form-group">
             <label htmlFor="username">Username:</label>
             <input type="text" id="username" name="username" required />
@@ -30,7 +39,6 @@ function Login() {
               Sign up now
             </Link>
           </p>{" "}
-          {/* Updated Link */}
         </div>
       </div>
     </div>

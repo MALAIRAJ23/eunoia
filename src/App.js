@@ -15,6 +15,7 @@ import logo1 from "./icon.jpg";
 import logo2 from "./title.jpg";
 import loginImage from "./getstarted.jpg";
 import "./App.css";
+import ElementsPage from "./elements"; // Import ElementsPage
 
 function MainApp() {
   const location = useLocation();
@@ -37,7 +38,7 @@ function MainApp() {
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/engage">Engage</Link>
-            <Link to="/elements">Elements</Link>
+            <Link to="/elements">Elements</Link> {/* Link to Elements */}
             <Link to="/more">More</Link>
           </nav>
         </>
@@ -88,10 +89,16 @@ function MainApp() {
         {/* Reset Password Route */}
         <Route path="/resetpassword" element={<ResetPassword />} />
 
-        {/* Additional Routes */}
+        {/* About Route */}
         <Route path="/about" element={<About />} />
+
+        {/* Engage Route */}
         <Route path="/engage" element={<div>Engage Page</div>} />
-        <Route path="/elements" element={<div>Elements Page</div>} />
+
+        {/* Elements Route */}
+        <Route path="/elements" element={<ElementsPage />} />
+
+        {/* More Route */}
         <Route path="/more" element={<div>More Page</div>} />
       </Routes>
 
