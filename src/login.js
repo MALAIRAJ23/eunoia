@@ -1,6 +1,6 @@
-import React from 'react';
-import './login.css'; 
-import { Link, useNavigate } from 'react-router-dom'; 
+import React from "react";
+import "./login.css";
+import { Link, useNavigate } from "react-router-dom";  // Added useNavigate
 
 function Login() {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ function Login() {
     event.preventDefault();
     // Here, you can implement authentication logic (optional)
     // If authentication is successful:
-    navigate('/homepage'); // Redirect to the new homepage after login
+    navigate('/elements'); // Redirect to the new  element page after loginS
   };
 
   return (
@@ -27,13 +27,18 @@ function Login() {
           </div>
           <button type="submit">Login</button>
         </form>
-        
-        {/* Extra options container for Forgot Password and Sign Up */}
+
         <div className="login-extra-options">
-          <div className="extra-options-container">
-            <Link to="/forgotpassword" className="forgot-password-link">Forgot Password?</Link>
-            <p>Don't have an account? <Link to="/signup" className="signup-link">Sign up now</Link></p>
-          </div>
+          <br></br>
+          <Link to="/forgotpassword" className="forgot-password-link">
+            Forgot Password?
+          </Link>
+          <p>
+            Don't have an account?{" "}
+            <Link to="/signup" className="signup-link">
+              Sign up now
+            </Link>
+          </p>{" "}
         </div>
       </div>
     </div>

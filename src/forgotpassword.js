@@ -11,7 +11,7 @@ function ForgotPassword() {
     e.preventDefault();
     // Mocking an API call to send reset link
     if (email) {
-      console.log(`Reset link sent to: ${email}`);
+      console.log('Reset link sent to: ${email}');
       setMessage('A password reset link has been sent to your email.');
 
       // Simulate sending an email and redirecting to login page

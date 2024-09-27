@@ -62,22 +62,3 @@ button {
 button:hover {
   background-color: #3d1e5d;
 }
-
-/* Styling for the extra options container */
-.extra-options-container {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.forgot-password-link, .signup-link {
-  color: #512260;
-  text-decoration: none;
-  font-family: 'Frunchy sage', serif;
-  margin-bottom: 10px;
-}
-
-.forgot-password-link:hover, .signup-link:hover {
-  text-decoration: underline;
-}
