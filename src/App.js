@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Link,
+  useNavigate,
   useLocation,
 } from "react-router-dom";
 import Login from "./login";
@@ -11,8 +12,14 @@ import Signup from "./signup";
 import ForgotPassword from "./forgotpassword";
 import ResetPassword from "./resetpassword";
 import About from "./about";
+<<<<<<< HEAD
 import Engage from "./engage"; // Import Engage component
 import ElementsPage from "./elements"; // Import ElementsPage component
+=======
+import ElementsPage from "./elements"; // Import ElementsPage
+import Elements1Page from "./elements1"; // Import Elements1Page (New Page)
+import EngagePage from "./engage"; // Assuming there's an EngagePage component
+>>>>>>> 6a897d5da57ef24109fa68f35546d4e7a3f6fa1a
 import logo1 from "./icon.jpg";
 import logo2 from "./title.jpg";
 import loginImage from "./getstarted.jpg";
@@ -81,9 +88,24 @@ function MainApp() {
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/about" element={<About />} />
+<<<<<<< HEAD
         <Route path="/engage" element={<Engage />} /> {/* Engage Component */}
         <Route path="/elements" element={<ElementsPage />} />{" "}
         {/* ElementsPage */}
+=======
+
+        {/* Engage Route */}
+        <Route path="/engage" element={<EngagePage />} />
+
+        {/* Elements Route */}
+        <Route path="/elements" element={<ElementsPage />} />
+
+        {/* Elements1 Route (New Page) */}
+        <Route path="/elements1" element={<Elements1Page />} />
+
+        {/* More Route */}
+        <Route path="/more" element={<div>More Page</div>} />
+>>>>>>> 6a897d5da57ef24109fa68f35546d4e7a3f6fa1a
       </Routes>
 
       {/* Conditionally render Footer */}
