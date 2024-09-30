@@ -61,4 +61,8 @@ function ElementsPage() {
   );
 }
 
+<<<<<<< HEAD
 export default ElementsPage;
+=======
+export default FlipCard;
+>>>>>>> ceaf903fa6da16392ff1b78228e6f5b64c0cce3b
