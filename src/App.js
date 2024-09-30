@@ -12,14 +12,11 @@ import Signup from "./signup";
 import ForgotPassword from "./forgotpassword";
 import ResetPassword from "./resetpassword";
 import About from "./about";
-<<<<<<< HEAD
 import Engage from "./engage"; // Import Engage component
 import ElementsPage from "./elements"; // Import ElementsPage component
-=======
 import ElementsPage from "./elements"; // Import ElementsPage
 import Elements1Page from "./elements1"; // Import Elements1Page (New Page)
 import EngagePage from "./engage"; // Assuming there's an EngagePage component
->>>>>>> 6a897d5da57ef24109fa68f35546d4e7a3f6fa1a
 import logo1 from "./icon.jpg";
 import logo2 from "./title.jpg";
 import loginImage from "./getstarted.jpg";
