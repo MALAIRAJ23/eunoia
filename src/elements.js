@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./elements.css";
-import img from "./exambooster.jpg"; // Ensure the image paths are correct
+import img from "./exambooster.jpg";
 import image2 from "./affandman.jpg";
 import image3 from "./journal.jpg";
 import image4 from "./activities.jpg";
@@ -27,7 +27,7 @@ function ElementsPage() {
   const handleButtonClick = (e, buttonLabel) => {
     e.stopPropagation(); // Prevent card flip
     if (buttonLabel === "Start Boost") {
-      navigate("/elements1"); // Redirect to elements1 page
+      navigate("/elements1"); // Redirect to Elements1Page
     } else {
       alert(`Button clicked: ${buttonLabel}`);
     }
@@ -61,8 +61,4 @@ function ElementsPage() {
   );
 }
 
-<<<<<<< HEAD
 export default ElementsPage;
-=======
-export default FlipCard;
->>>>>>> ceaf903fa6da16392ff1b78228e6f5b64c0cce3b
