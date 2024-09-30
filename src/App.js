@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Link,
+  useNavigate,
   useLocation,
 } from "react-router-dom";
 import Login from "./login";
@@ -11,11 +12,13 @@ import Signup from "./signup";
 import ForgotPassword from "./forgotpassword";
 import ResetPassword from "./resetpassword";
 import About from "./about";
+import ElementsPage from "./elements"; // Import ElementsPage
+import Elements1Page from "./elements1"; // Import Elements1Page (New Page)
+import EngagePage from "./engage"; // Assuming there's an EngagePage component
 import logo1 from "./icon.jpg";
 import logo2 from "./title.jpg";
 import loginImage from "./getstarted.jpg";
 import "./App.css";
-import ElementsPage from "./elements"; // Import ElementsPage
 
 function MainApp() {
   const location = useLocation();
@@ -92,10 +95,13 @@ function MainApp() {
         <Route path="/about" element={<About />} />
 
         {/* Engage Route */}
-        <Route path="/engage" element={<div>Engage Page</div>} />
+        <Route path="/engage" element={<EngagePage />} />
 
         {/* Elements Route */}
         <Route path="/elements" element={<ElementsPage />} />
+
+        {/* Elements1 Route (New Page) */}
+        <Route path="/elements1" element={<Elements1Page />} />
 
         {/* More Route */}
         <Route path="/more" element={<div>More Page</div>} />
