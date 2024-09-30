@@ -12,6 +12,8 @@ import Signup from "./signup";
 import ForgotPassword from "./forgotpassword";
 import ResetPassword from "./resetpassword";
 import About from "./about";
+import Engage from "./engage"; // Import Engage component
+import ElementsPage from "./elements"; // Import ElementsPage component
 import ElementsPage from "./elements"; // Import ElementsPage
 import Elements1Page from "./elements1"; // Import Elements1Page (New Page)
 import EngagePage from "./engage"; // Assuming there's an EngagePage component
@@ -22,30 +24,29 @@ import "./App.css";
 
 function MainApp() {
   const location = useLocation();
-  const showHeaderAndFooter =
-    location.pathname !== "/login" &&
-    location.pathname !== "/signup" &&
-    location.pathname !== "/forgotpassword" &&
-    location.pathname !== "/about" &&
-    location.pathname !== "/engage" &&
-    location.pathname !== "/more" &&
-    location.pathname !== "/resetpassword";
+
+  // Conditionally hide header and footer on specific routes
+  const showHeaderAndFooter = ![
+    "/login",
+    "/signup",
+    "/forgotpassword",
+    "/resetpassword",
+  ].includes(location.pathname);
 
   return (
     <div className="MainPage">
-      {/* Conditionally show navigation and footer */}
+      {/* Conditionally render Navigation */}
       {showHeaderAndFooter && (
-        <>
-          <nav className="Main">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/engage">Engage</Link>
-            <Link to="/elements">Elements</Link> {/* Link to Elements */}
-            <Link to="/more">More</Link>
-          </nav>
-        </>
+        <nav className="Main">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/engage">Engage</Link>
+          <Link to="/elements">Elements</Link>
+          <Link to="/more">More</Link>
+        </nav>
       )}
 
+      {/* Routing to different pages */}
       <Routes>
         {/* Home Route */}
         <Route
@@ -78,21 +79,17 @@ function MainApp() {
             </div>
           }
         />
-
-        {/* Login Route */}
+        {/* Other Routes */}
         <Route path="/login" element={<Login />} />
-
-        {/* Signup Route */}
         <Route path="/signup" element={<Signup />} />
-
-        {/* Forgot Password Route */}
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-
-        {/* Reset Password Route */}
         <Route path="/resetpassword" element={<ResetPassword />} />
-
-        {/* About Route */}
         <Route path="/about" element={<About />} />
+<<<<<<< HEAD
+        <Route path="/engage" element={<Engage />} /> {/* Engage Component */}
+        <Route path="/elements" element={<ElementsPage />} />{" "}
+        {/* ElementsPage */}
+=======
 
         {/* Engage Route */}
         <Route path="/engage" element={<EngagePage />} />
@@ -105,15 +102,14 @@ function MainApp() {
 
         {/* More Route */}
         <Route path="/more" element={<div>More Page</div>} />
+>>>>>>> 6a897d5da57ef24109fa68f35546d4e7a3f6fa1a
       </Routes>
 
-      {/* Conditionally show footer */}
+      {/* Conditionally render Footer */}
       {showHeaderAndFooter && (
-        <div className="ftrdiv">
-          <footer className="ftr">
-            <p className="ftrp">@EUNOIA - Inner Harmony</p>
-          </footer>
-        </div>
+        <footer className="ftr">
+          <p className="ftrp">@EUNOIA - Inner Harmony</p>
+        </footer>
       )}
     </div>
   );
