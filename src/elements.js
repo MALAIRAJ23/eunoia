@@ -28,6 +28,8 @@ function ElementsPage() {
     e.stopPropagation(); // Prevent card flip
     if (buttonLabel === "Start Boost") {
       navigate("/elements1"); // Redirect to Elements1Page
+    } else if (buttonLabel === "Log Your Mood") {
+      navigate("/logurmood"); // Redirect to LogUrMood page
     } else {
       alert(`Button clicked: ${buttonLabel}`);
     }
