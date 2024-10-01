@@ -1,29 +1,96 @@
 /* Main container */
 .elements1-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
   padding: 20px;
   background-color: #a48da6; /* Light purple background for the page */
+  gap: 20px; /* Adds spacing between calendar and event section */
+  height: 100vh; /* Make the container take the full height of the viewport */
 }
 
 /* Calendar container */
+/* Calendar container */
 .calendar-container {
-  margin-top: 20px;
+  width: 30%; /* Restrict calendar width */
+  max-width: 400px; /* Maximum width for the calendar */
+  /* Remove the background color */
+  border-radius: 10px;
+  padding: 10px;
   display: flex;
-  justify-content: center;
-  width: 80%; /* Increased width for a larger calendar */
-  max-width: 600px; /* Set a maximum width */
+  justify-content: center; /* Center the calendar horizontally */
+  align-items: center; /* Center the calendar vertically */
 }
 
-/* Calendar overall background */
-.react-calendar {
-  background-color: #d8bfea !important; /* Light violet for calendar background */
+
+/* Month and Year header background */
+.react-calendar__navigation {
+  background-color: lightgreen !important; /* Light green for month/year background */
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 1.4rem; /* Larger font size for month and year */
+  text-align: center;
+  display: flex;
+  justify-content: space-between; /* Make buttons and text evenly spaced */
+  align-items: center; /* Vertically center content */
+}
+
+/* Navigation button styling */
+.react-calendar__navigation button {
+  background-color: #4CAF50 !important; /* Green button background */
   border: none;
+  color: white !important; /* White text color */
+  font-weight: bold;
+  font-size: 1.2rem; /* Increase font size for navigation buttons */
+  padding: 10px 15px; /* Add padding for a better button appearance */
+  border-radius: 5px; /* Rounded buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.react-calendar__navigation button:hover {
+  background-color: #45a049 !important; /* Darker green on hover */
+}
+
+/* Calendar tile styling */
+.react-calendar__tile {
+  background-color: lightgreen !important;
+  color: darkgreen !important;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: transform 0.2s;
+  padding: 8px; /* Slightly larger tiles */
+}
+
+.react-calendar__tile:enabled:hover {
+  background-color: #98fb98 !important; /* Lighter green on hover */
+  transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Today’s date styling */
+.react-calendar__tile--now {
+  background-color: #32cd32 !important; /* Brighter green for today */
+  color: white !important;
+  border: 2px solid white;
+}
+
+/* Active (selected) date styling */
+.react-calendar__tile--active {
+  background-color: #228b22 !important; /* Darker green when selected */
+  color: white !important;
+  border: 2px solid white;
+}
+
+/* Events container styling */
+.events-container {
+  flex-grow: 1; /* Allow event container to take remaining space */
+  background-color: #ffffff;
+  padding: 20px;
   border-radius: 10px;
-  padding: 15px; /* Increased padding for more space */
-  color: #fff; /* White text for better readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Make events container full width */
+  max-width: 600px; /* Maximum width for events section */
 }
 
 /* Modal styling */
@@ -57,58 +124,21 @@
   cursor: pointer;
 }
 
-/* Month and Year header background */
-.react-calendar__navigation {
-  background-color: lightgreen !important; /* Light green for month/year background */
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.react-calendar__navigation button {
-  color: darkgreen !important; /* Dark green text for month and year */
-  font-weight: bold;
-}
-
-/* Calendar tile styling */
-.react-calendar__tile {
-  background-color: lightgreen !important;
-  color: darkgreen !important;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: transform 0.2s;
-}
-
-.react-calendar__tile:enabled:hover {
-  background-color: #98fb98 !important; /* Lighter green on hover */
-  transform: scale(1.05); /* Slight scale on hover */
-}
-
-/* Today’s date styling */
-.react-calendar__tile--now {
-  background-color: #32cd32 !important; /* Brighter green for today */
-  color: white !important;
-  border: 2px solid white;
-}
-
-.react-calendar__tile--active {
-  background-color: #228b22 !important; /* Darker green when selected */
-  color: white !important;
-  border: 2px solid white;
-}
-
-/* Event Input Container */
-.event-input-container {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #92759c;
-  border-radius: 8px;
-  background-color: #92759c; /* Light background for input area */
-}
-
-/* Responsive calendar container */
+/* Responsive adjustments */
 @media (max-width: 768px) {
+  .elements1-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Reduce gap on smaller screens */
+  }
+
   .calendar-container {
     width: 100%; /* Full width for smaller screens */
-    padding: 10px;
+    max-width: none; /* Remove max-width for full responsiveness */
+  }
+
+  .events-container {
+    width: 100%; /* Full width for the events container */
+    margin-left: 0; /* No margin on smaller screens */
   }
 }

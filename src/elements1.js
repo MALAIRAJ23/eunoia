@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Calendar from "react-calendar"; // Importing the calendar component
-import "react-calendar/dist/Calendar.css"; // Import the default styles
-import "./elements1.css"; // CSS for elements1 page
+import Calendar from "react-calendar"; 
+import "react-calendar/dist/Calendar.css"; 
+import "./elements1.css"; 
 
 const Elements1Page = () => {
-  const [date, setDate] = useState(new Date()); // State to manage selected date
-  const [eventInput, setEventInput] = useState(""); // State for user input
-  const [events, setEvents] = useState({}); // State to manage events
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+  const [date, setDate] = useState(new Date());
+  const [eventInput, setEventInput] = useState(""); 
+  const [events, setEvents] = useState({}); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Load events from local storage on component mount
   useEffect(() => {
@@ -15,38 +15,35 @@ const Elements1Page = () => {
     setEvents(storedEvents);
   }, []);
 
-  // Handle date change and open modal
+  const formatSelectedDate = () => date.toDateString(); // Helper for formatted date
+
   const handleDateChange = (newDate) => {
     setDate(newDate);
-    setIsModalOpen(true); // Open the modal when a date is clicked
+    setIsModalOpen(true); 
   };
 
-  // Handle event input change
   const handleEventInputChange = (e) => {
     setEventInput(e.target.value);
   };
 
-  // Handle event submission
   const handleEventSubmit = () => {
     if (eventInput.trim()) {
-      const formattedDate = date.toDateString();
+      const formattedDate = formatSelectedDate();
       setEvents((prevEvents) => {
         const updatedEvents = {
           ...prevEvents,
           [formattedDate]: [...(prevEvents[formattedDate] || []), eventInput],
         };
-        // Save updated events to local storage
         localStorage.setItem("events", JSON.stringify(updatedEvents));
         return updatedEvents;
       });
-      setEventInput(""); // Clear input after submitting
-      setIsModalOpen(false); // Close the modal after submitting
+      setEventInput(""); 
+      setIsModalOpen(false);
     }
   };
 
-  // Render events for the selected date
   const renderEvents = () => {
-    const formattedDate = date.toDateString();
+    const formattedDate = formatSelectedDate();
     return (
       <div className="events-container">
         <h3>Events on {formattedDate}</h3>
@@ -74,10 +71,11 @@ const Elements1Page = () => {
           onChange={handleDateChange}
           value={date}
           tileClassName={({ date, view }) => {
-            // Function to assign a different color for each day
             const colors = ["#FF6347", "#FFD700", "#ADFF2F", "#00BFFF", "#FF69B4", "#FF4500", "#8A2BE2"];
-            return view === 'month' ? `tile-${date.getDate() % colors.length}` : null;
+            return view === "month" ? `tile-${date.getDate() % colors.length}` : null;
           }}
+          next2Label={null} // Remove the "Next Year" button
+          prev2Label={null} // Remove the "Previous Year" button
         />
       </div>
 
@@ -86,7 +84,7 @@ const Elements1Page = () => {
         <div className="modal">
           <div className="modal-content">
             <span className="close-button" onClick={() => setIsModalOpen(false)}>&times;</span>
-            <h2>Add Event for {date.toDateString()}</h2>
+            <h2>Add Event for {formatSelectedDate()}</h2>
             <input
               type="text"
               value={eventInput}
