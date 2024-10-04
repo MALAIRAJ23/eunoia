@@ -9,7 +9,7 @@ function Login() {
     event.preventDefault();
     // Here, you can implement authentication logic (optional)
     // If authentication is successful:
-    navigate('/elements'); // Redirect to the new  element page after loginS
+    navigate('/newhomepage'); // Redirect to the new homepage after login
   };
 
   return (

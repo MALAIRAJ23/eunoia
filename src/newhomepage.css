@@ -1,0 +1,107 @@
+/* Top Navigation Bar */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D8BFD8; /* Light Violet */
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .logo-section {
+    position: relative;
+  }
+  
+  .logo {
+    width: 50px;
+    cursor: pointer;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .dropdown-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* General Styling */
+  .homepage-container {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .homepage-header {
+    background-color: #D8BFD8; /* Light Violet */
+    color: white;
+    padding: 20px 0;
+  }
+  
+  .homepage-content {
+    margin: 20px;
+  }
+  
+  .features-section, .updates-section, .profile-section {
+    margin: 20px 0;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #D8BFD8; /* Light Violet */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #C8A2C8; /* Slightly darker violet on hover */
+  }
+  
+  .homepage-footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-top: 30px;
+    text-align: center;
+  }
+  

@@ -19,6 +19,7 @@ import logo1 from "./icon.jpg";
 import logo2 from "./title.jpg";
 import loginImage from "./getstarted.jpg";
 import "./App.css";
+import NewHomepage from './newhomepage';
 
 function MainApp() {
   const location = useLocation();
@@ -78,6 +79,7 @@ function MainApp() {
           }
         />
         {/* Other Routes */}
+        <Route path="/newhomepage" element={<NewHomepage />} /> {/* New Homepage Route */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
