@@ -1,107 +1,77 @@
-/* Top Navigation Bar */
+/* Container styles */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+/* Navigation bar styles */
 .top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #D8BFD8; /* Light Violet */
-    padding: 10px 20px;
-    color: white;
-  }
-  
-  .logo-section {
-    position: relative;
-  }
-  
-  .logo {
-    width: 50px;
-    cursor: pointer;
-  }
-  
-  .nav-links {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li {
-    margin-right: 20px;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Dropdown Menu */
-  .dropdown-menu {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  
-  .dropdown-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .dropdown-menu li {
-    padding: 10px;
-    cursor: pointer;
-    color: black;
-  }
-  
-  .dropdown-menu li:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* General Styling */
-  .homepage-container {
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .homepage-header {
-    background-color: #D8BFD8; /* Light Violet */
-    color: white;
-    padding: 20px 0;
-  }
-  
-  .homepage-content {
-    margin: 20px;
-  }
-  
-  .features-section, .updates-section, .profile-section {
-    margin: 20px 0;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #D8BFD8; /* Light Violet */
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #C8A2C8; /* Slightly darker violet on hover */
-  }
-  
-  .homepage-footer {
-    background-color: #f1f1f1;
-    padding: 10px;
-    margin-top: 30px;
-    text-align: center;
-  }
-  
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Align content to both sides */
+  padding: 10px;
+  background-color: #a48da6; /* Change background color if needed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for better definition */
+}
+
+/* Left section of the navigation (can add other items here) */
+.nav-left {
+  flex: 1;
+}
+
+/* Right section for logo and dropdown */
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo-section {
+  position: relative;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+/* Page content styles */
+.homepage-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.no-text {
+  /* Since no text, the area will remain blank */
+}
+
+/* Footer styles */
+.homepage-footer {
+  /* Add footer styles if needed */
+}
