@@ -1,26 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './resetpassword.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 function ResetPassword() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams(); // To get the query parameters from URL
 
-  const handleSubmit = (e) => {
+  // Get the reset code (mocked) from the URL
+  const resetCode = searchParams.get('resetCode');
+
+  useEffect(() => {
+    if (!resetCode) {
+      setError('Invalid or missing password reset code.');
+    }
+  }, [resetCode]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Check if passwords match
+
     if (password !== confirmPassword) {
       setMessage("Passwords don't match.");
-    } else {
-      console.log('Password successfully reset');
-      setMessage('Your password has been reset. Redirecting to login...');
+      return;
+    }
+
+    try {
+      // Simulate password reset logic (this can be connected to a backend API if needed)
+      console.log('Password reset code:', resetCode);
+      console.log('New password set to:', password);
+      
+      setMessage('Your password has been successfully reset. Redirecting to login...');
       
       // Redirect to login after a delay
       setTimeout(() => {
         navigate('/login');
       }, 3000);
+    } catch (error) {
+      console.error('Error resetting password:', error);
+      setError('Failed to reset password. Please try again.');
     }
   };
 
@@ -28,6 +48,7 @@ function ResetPassword() {
     <div className="reset-password-container">
       <div className="reset-password-form">
         <h2>Reset Password</h2>
+        {error && <p className="error">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="password">New Password:</label>

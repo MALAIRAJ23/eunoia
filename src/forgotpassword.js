@@ -5,21 +5,23 @@ import { useNavigate } from 'react-router-dom';
 function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Mocking an API call to send reset link
+
+    // Simulate sending a password reset email
     if (email) {
-      console.log('Reset link sent to: ${email}');
+      console.log('Simulated: Reset link sent to:', email); // For debugging purposes
       setMessage('A password reset link has been sent to your email.');
 
-      // Simulate sending an email and redirecting to login page
+      // Redirect to login page after a few seconds
       setTimeout(() => {
-        navigate('/login');  // Redirect to login page after a few seconds
+        navigate('/login');
       }, 3000);
     } else {
-      setMessage('Please enter a valid email address.');
+      setError('Please enter a valid email address.');
     }
   };
 
@@ -42,6 +44,7 @@ function ForgotPassword() {
           <button type="submit">Send Reset Link</button>
         </form>
         {message && <p className="message">{message}</p>}
+        {error && <p className="error">{error}</p>}
       </div>
     </div>
   );
